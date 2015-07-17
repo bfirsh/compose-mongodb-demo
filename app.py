@@ -10,7 +10,7 @@ db = mongo['test']
 @app.route('/')
 def hello():
     db.hits.insert({"ip": request.remote_addr, "ts": datetime.datetime.utcnow()})
-    return '<h1>This page has been visited %s times!</h1>' % db.hits.count()
+    return '<h1>This page has been visited %s times! Test test test</h1>' % db.hits.count()
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
